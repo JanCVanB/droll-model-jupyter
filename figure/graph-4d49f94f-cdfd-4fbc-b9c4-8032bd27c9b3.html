@@ -1,0 +1,52 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="../lib/vis/dist/vis.js"></script>
+      <link href="../lib/vis/dist/vis.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+    <div id="4d49f94f-cdfd-4fbc-b9c4-8032bd27c9b3"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"label": "animal generalizes human", "group": "Model Connection", "id": "5711", "title": "{'name': 'animal generalizes human'}"}, {"label": "generalizes", "group": "Metamodel Connection", "id": "5701", "title": "{'name': 'generalizes'}"}, {"label": "animal generalizes dog", "group": "Model Connection", "id": "5712", "title": "{'name': 'animal generalizes dog'}"}, {"label": "animal generalizes octopus", "group": "Model Connection", "id": "5713", "title": "{'name': 'animal generalizes octopus'}"}, {"label": "human implements vertebrate", "group": "Model Connection", "id": "5714", "title": "{'name': 'human implements vertebrate'}"}, {"label": "implements", "group": "Metamodel Connection", "id": "5702", "title": "{'name': 'implements'}"}, {"label": "dog implements vertebrate", "group": "Model Connection", "id": "5715", "title": "{'name': 'dog implements vertebrate'}"}, {"label": "organ is inside", "group": "Model Connection", "id": "5716", "title": "{'name': 'organ is inside'}"}, {"label": "composes", "group": "Metamodel Connection", "id": "5700", "title": "{'name': 'composes'}"}, {"label": "has blood type", "group": "Model Connection", "id": "5717", "title": "{'name': 'has blood type'}"}, {"label": "kidney is inside", "group": "Model Connection", "id": "5718", "title": "{'name': 'kidney is inside'}"}, {"label": "is friends with", "group": "Model Connection", "id": "5719", "title": "{'name': 'is friends with'}"}, {"label": "connection", "group": "Connection", "id": "5696", "title": "{'name': 'connection'}"}];
+      var groups = {"Connection": {"color": {"border": "#888888", "background": "#ffffff", "highlight": {"border": "#888888", "background": "#ffffff"}}}, "Metamodel Element": {"color": {"border": "#7b9f35", "background": "#7b9f35", "highlight": {"border": "#333333", "background": "#7b9f35"}}}, "Instance Connection": {"color": {"border": "#ffaaaa", "background": "#ffaaaa", "highlight": {"border": "#333333", "background": "#ffaaaa"}}}, "Metamodel Connection": {"color": {"border": "#d4ee9f", "background": "#d4ee9f", "highlight": {"border": "#333333", "background": "#d4ee9f"}}}, "Instance Element": {"color": {"border": "#aa3939", "background": "#aa3939", "highlight": {"border": "#333333", "background": "#aa3939"}}}, "Element": {"color": {"border": "#333333", "background": "#333333", "highlight": {"border": "#333333", "background": "#333333"}}}, "Model Element": {"color": {"border": "#582a72", "background": "#582a72", "highlight": {"border": "#333333", "background": "#582a72"}}}, "Model Connection": {"color": {"border": "#9775aa", "background": "#9775aa", "highlight": {"border": "#333333", "background": "#9775aa"}}}};
+      var edges = [{"label": "IS_A", "physics": true, "from": "5711", "font": {"color": "#dddddd"}, "to": "5701", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5712", "font": {"color": "#dddddd"}, "to": "5701", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5713", "font": {"color": "#dddddd"}, "to": "5701", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5714", "font": {"color": "#dddddd"}, "to": "5702", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5715", "font": {"color": "#dddddd"}, "to": "5702", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5716", "font": {"color": "#dddddd"}, "to": "5700", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5717", "font": {"color": "#dddddd"}, "to": "5700", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5718", "font": {"color": "#dddddd"}, "to": "5700", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5719", "font": {"color": "#dddddd"}, "to": "5696", "color": "#dddddd"}];
+
+      var container = document.getElementById("4d49f94f-cdfd-4fbc-b9c4-8032bd27c9b3");
+      
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          groups: groups,
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              arrows: {
+                  to: {enabled: true, scaleFactor: 2}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+      
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    

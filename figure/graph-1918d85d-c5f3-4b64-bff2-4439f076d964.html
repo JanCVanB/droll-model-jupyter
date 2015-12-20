@@ -1,0 +1,52 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="../lib/vis/dist/vis.js"></script>
+      <link href="../lib/vis/dist/vis.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+    <div id="1918d85d-c5f3-4b64-bff2-4439f076d964"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"label": "jack", "group": "Instance Element", "id": "5720", "title": "{'name': 'jack'}"}, {"label": "human", "group": "Model Element", "id": "5705", "title": "{'name': 'human'}"}, {"label": "jill", "group": "Instance Element", "id": "5721", "title": "{'name': 'jill'}"}, {"label": "john", "group": "Instance Element", "id": "5722", "title": "{'name': 'john'}"}, {"label": "jane", "group": "Instance Element", "id": "5723", "title": "{'name': 'jane'}"}, {"label": "jasper", "group": "Instance Element", "id": "5724", "title": "{'name': 'jasper'}"}, {"label": "dog", "group": "Model Element", "id": "5706", "title": "{'name': 'dog'}"}, {"label": "jacoby", "group": "Instance Element", "id": "5725", "title": "{'name': 'jacoby'}"}, {"label": "octopus", "group": "Model Element", "id": "5707", "title": "{'name': 'octopus'}"}, {"label": "a+", "group": "Instance Element", "id": "5726", "title": "{'name': 'a+'}"}, {"label": "blood type", "group": "Model Element", "id": "5710", "title": "{'name': 'blood type'}"}, {"label": "b-", "group": "Instance Element", "id": "5727", "title": "{'name': 'b-'}"}, {"label": "dea 1.1-", "group": "Instance Element", "id": "5728", "title": "{'name': 'dea 1.1-'}"}, {"label": "invertebrate blood", "group": "Instance Element", "id": "5729", "title": "{'name': 'invertebrate blood'}"}, {"label": "jack's left kidney", "group": "Instance Element", "id": "5730", "title": "{'name': \"jack's left kidney\"}"}, {"label": "kidney", "group": "Model Element", "id": "5709", "title": "{'name': 'kidney'}"}, {"label": "jill's right kidney", "group": "Instance Element", "id": "5731", "title": "{'name': \"jill's right kidney\"}"}, {"label": "john's left kidney", "group": "Instance Element", "id": "5732", "title": "{'name': \"john's left kidney\"}"}, {"label": "john's right kidney", "group": "Instance Element", "id": "5733", "title": "{'name': \"john's right kidney\"}"}, {"label": "jane's left kidney", "group": "Instance Element", "id": "5734", "title": "{'name': \"jane's left kidney\"}"}, {"label": "jane's right kidney", "group": "Instance Element", "id": "5735", "title": "{'name': \"jane's right kidney\"}"}, {"label": "jasper's left kidney", "group": "Instance Element", "id": "5736", "title": "{'name': \"jasper's left kidney\"}"}, {"label": "jasper's right kidney", "group": "Instance Element", "id": "5737", "title": "{'name': \"jasper's right kidney\"}"}];
+      var groups = {"Connection": {"color": {"border": "#888888", "background": "#ffffff", "highlight": {"border": "#888888", "background": "#ffffff"}}}, "Metamodel Element": {"color": {"border": "#7b9f35", "background": "#7b9f35", "highlight": {"border": "#333333", "background": "#7b9f35"}}}, "Instance Connection": {"color": {"border": "#ffaaaa", "background": "#ffaaaa", "highlight": {"border": "#333333", "background": "#ffaaaa"}}}, "Metamodel Connection": {"color": {"border": "#d4ee9f", "background": "#d4ee9f", "highlight": {"border": "#333333", "background": "#d4ee9f"}}}, "Instance Element": {"color": {"border": "#aa3939", "background": "#aa3939", "highlight": {"border": "#333333", "background": "#aa3939"}}}, "Element": {"color": {"border": "#333333", "background": "#333333", "highlight": {"border": "#333333", "background": "#333333"}}}, "Model Element": {"color": {"border": "#582a72", "background": "#582a72", "highlight": {"border": "#333333", "background": "#582a72"}}}, "Model Connection": {"color": {"border": "#9775aa", "background": "#9775aa", "highlight": {"border": "#333333", "background": "#9775aa"}}}};
+      var edges = [{"label": "IS_A", "physics": true, "from": "5720", "font": {"color": "#dddddd"}, "to": "5705", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5721", "font": {"color": "#dddddd"}, "to": "5705", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5722", "font": {"color": "#dddddd"}, "to": "5705", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5723", "font": {"color": "#dddddd"}, "to": "5705", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5724", "font": {"color": "#dddddd"}, "to": "5706", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5725", "font": {"color": "#dddddd"}, "to": "5707", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5726", "font": {"color": "#dddddd"}, "to": "5710", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5727", "font": {"color": "#dddddd"}, "to": "5710", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5728", "font": {"color": "#dddddd"}, "to": "5710", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5729", "font": {"color": "#dddddd"}, "to": "5710", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5730", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5731", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5732", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5733", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5734", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5735", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5736", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}, {"label": "IS_A", "physics": true, "from": "5737", "font": {"color": "#dddddd"}, "to": "5709", "color": "#dddddd"}];
+
+      var container = document.getElementById("1918d85d-c5f3-4b64-bff2-4439f076d964");
+      
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          groups: groups,
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              arrows: {
+                  to: {enabled: true, scaleFactor: 2}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+      
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    
