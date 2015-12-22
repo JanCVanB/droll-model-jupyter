@@ -72,42 +72,32 @@ def vis_network(nodes, edges, physics=False):
     light_red = "#ffaaaa"
 
     groups = {
-        'Element': {
-            'color': {
-                'border': dark_gray, 'background': dark_gray,
-                'highlight': {
-                    'border': dark_gray, 'background': dark_gray}}},
-        'Connection': {
-            'color': {
-                'border': medium_gray, 'background': white,
-                'highlight': {
-                    'border': medium_gray, 'background': white}}},
-        "Metamodel Element": {
+        "element metamodel": {
             'color': {
                 'border': dark_green, 'background': dark_green,
                 'highlight': {
                     'border': dark_gray, 'background': dark_green}}},
-        "Metamodel Connection": {
+        "connection metamodel": {
             'color': {
                 'border': light_green, 'background': light_green,
                 'highlight': {
                     'border': dark_gray, 'background': light_green}}},
-        "Model Element": {
+        "element model": {
             'color': {
                 'border': dark_purple, 'background': dark_purple,
                 'highlight': {
                     'border': dark_gray, 'background': dark_purple}}},
-        "Model Connection": {
+        "connection model": {
             'color': {
                 'border': light_purple, 'background': light_purple,
                 'highlight': {
                     'border': dark_gray, 'background': light_purple}}},
-        "Instance Element": {
+        "element instance": {
             'color': {
                 'border': dark_red, 'background': dark_red,
                 'highlight': {
                     'border': dark_gray, 'background': dark_red}}},
-        "Instance Connection": {
+        "connection instance": {
             'color': {
                 'border': light_red, 'background': light_red,
                 'highlight': {
@@ -163,8 +153,8 @@ def draw(graph, labels=None, physics=True, relax_gray_relationships=False,
     edges = []
 
     def get_vis_info(node):
-        node_label = list(node.labels)[0]
-        # prop_key = options.get(node_label)
+        vis_group = ' '.join(sorted(node.labels))
+        # prop_key = options.get(vis_group)
         prop_key = 'name'
         vis_label = node.properties.get(prop_key, "")
         vis_id = node.ref.split("/")[1]
@@ -178,7 +168,7 @@ def draw(graph, labels=None, physics=True, relax_gray_relationships=False,
 
             title[key] = value
 
-        return {"id": vis_id, "label": vis_label, "group": node_label,
+        return {"id": vis_id, "label": vis_label, "group": vis_group,
                 "title": repr(title)}
 
     for row in data:
@@ -197,20 +187,15 @@ def draw(graph, labels=None, physics=True, relax_gray_relationships=False,
             if target_info not in nodes:
                 nodes.append(target_info)
 
-            source_layer = source_info['group'].split(' ')[0]
-            target_layer = target_info['group'].split(' ')[0]
-            if (source_layer == target_layer or
-                    (source_layer == 'Element' and
-                     target_layer == 'Connection')):
-                same_model_layer = True
-            else:
-                same_model_layer = False
+            source_layer = source_info['group'].split(' ')[1]
+            target_layer = target_info['group'].split(' ')[1]
+            same_model_layer = source_layer == target_layer
             if same_model_layer:
                 edge_color = '#333333'
                 edge_physics = True
             else:
                 edge_color = '#dddddd'
-                edge_physics = False if relax_gray_relationships else True
+                edge_physics = not relax_gray_relationships
 
             edges.append({"from": source_info["id"], "to": target_info["id"],
                           "label": rel.type, 'physics': edge_physics,
